@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h4 {
+				margin: 5px;
+				margin-bottom: 10px;
+				font-size: 105%;
+			}
+		</style>
+	</head>
+	<body style="text-align: center; padding-top: 20px;">
+		<div style="border: black solid 1px; 
+					background-color: #3366ac; 
+					margin-left: auto;
+					margin-right: auto;
+					padding: 15px;
+					width: 250px">
+			<div style="background-color: #eeeeee;
+						padding: 10px;
+						border: black solid 1px;">
+				<h4>Sign into Fakebook here</h4>
+				<form  action="code" method="get">
+					<div style="margin-left: 10px; 
+								margin-bottom: 10px; 
+								text-align: left">
+						<input type="hidden" name="client_id" 
+							   value="${client_id}"/>
+						<input type="hidden" name="redirect_uri"
+							   value="${redirect_uri}"/>
+						<input type="hidden" name="state" 
+							   value="${state}"/>
+						<label for="email">Email&nbsp;Address</label><br/>
+						<input id="email" name="email_address" 
+							   value="me@example.com"
+							   type="text" style="width: 90%">
+					</div>
+					
+					<button type="button" name="cancel" 
+							onclick="window.location='${cancel_redirect_uri}'"
+							>Cancel</button>
+					<button type="submit" name="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

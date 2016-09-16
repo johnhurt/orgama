@@ -1,0 +1,13 @@
+
+.logOutDialogContainer {
+    width: 15em;
+}
+
+.externalAuthCheck {
+    width: 75%;
+    font-size: 0.6em;
+    margin: auto;
+    margin-top: 0.5em;
+    padding: 3px;
+    margin-bottom: 5px;
+}

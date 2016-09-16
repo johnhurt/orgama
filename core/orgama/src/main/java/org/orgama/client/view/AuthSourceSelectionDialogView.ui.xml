@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    
+	<ui:with type="org.orgama.client.view.res.OrgamaImages" field="img"/>
+	<ui:with type="org.orgama.client.i18n.OrgamaConstants" field="cnst"/>
+
+	<ui:style src="res/css/AuthSourceSelection.css"/>
+
+    <g:HTMLPanel ui:styleName="{style.authSourceSelectorContainer}">
+        <g:Label text="{cnst.welcomeNewUser}"/>
+        <g:HTMLPanel ui:styleName="{style.authSourceSelectionHeader}">
+            <g:Label text="{cnst.selectAuthSource}{cnst.colon}"/>
+        </g:HTMLPanel>
+        <g:HTMLPanel ui:field="pnlAuthSourceSelector" 
+					 ui:styleName="{style.authSourceSelector}">
+            <div class="{style.authSourcePositioner}">
+                <g:FocusPanel ui:field="pnlGoogleAccounts" ui:visible="false"
+                            ui:styleName="{style.authSource}">
+                    <g:HTMLPanel>
+                        <g:Image ui:height="64px" ui:width="64x" 
+                            ui:resource="{img.google_64x64}"/>
+                        <g:Label ui:text="{cnst.googleAccounts}"/>
+                    </g:HTMLPanel>
+                </g:FocusPanel>
+            </div>
+            <div class="{style.authSourcePositioner}">
+                <g:FocusPanel ui:field="pnlFacebook" ui:visible="false"
+                            ui:styleName="{style.authSource}">
+                    <g:HTMLPanel>
+                        <g:Image ui:height="64px" ui:width="64x" 
+                            ui:resource="{img.facebook_64x64}"/>
+                        <g:Label ui:text="{cnst.facebook}"/>
+                    </g:HTMLPanel>
+                </g:FocusPanel>
+            </div>
+        </g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

@@ -1,0 +1,96 @@
+
+.blockUiContainer {
+    position: fixed;
+    z-index: 214748
+    
+}
+
+.blockUiBackground {
+    background-color: #444444;
+    opacity: 0.50;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.blockUiContentContainer {
+    position: absolute;
+    display: table;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.blockUiContent {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #303030;
+    font-size: 1.5em;
+    color: white;
+    height: auto;
+    width: auto;
+    padding: 1em;
+}
+
+.blockUiUserContent {
+    
+}
+
+.blockUiControls {
+    
+}
+
+.blockUiPaddingTopRow {
+    display: table-row;
+    height: 30%;
+}
+
+.blockUiPaddingTopLeft {
+    display: table-cell;
+    width: 50%;
+}
+
+.blockUiPaddingTopMiddle {
+    display: table-cell;
+}
+
+.blockUiPaddingTopRight {
+    display: table-cell;
+    width: 50%;
+}
+
+.blockUiPaddingMiddleRow {
+    display: table-row;
+    vertical-align: middle;
+}
+
+.blockUiPaddingMiddleLeft {
+    display: table-cell;
+    width: 50%;
+}
+
+.blockUiPaddingMiddleRight {
+    display: table-cell;
+    width: 50%;
+}
+
+.blockUiPaddingBottomRow {
+    display: table-row;
+    height: 70%;
+}
+
+.blockUiPaddingBottomLeft {
+    display: table-cell;
+    width: 50%;
+}
+
+.blockUiPaddingBottomMiddle {
+    display: table-cell;
+}
+
+.blockUiPaddingBottomRight {
+    display: table-cell;
+    width: 50%;
+}

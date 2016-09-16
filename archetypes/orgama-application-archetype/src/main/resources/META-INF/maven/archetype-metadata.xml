@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="MacRoman"?>
+<archetype-descriptor name="orgama-application-archetype">
+	<requiredProperties>
+		<requiredProperty key="dollar">
+			<defaultValue>$</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="email-address">
+			<defaultValue>me@example.com</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="password-file">
+			<defaultValue>password.txt</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="app-engine-app-name">
+			<defaultValue>${artifactId}</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="app-engine-app-version">
+			<defaultValue>dev</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="facebook-app-id">
+			<defaultValue>YourFacebookApplicationId</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="facebook-app-secret-file">
+			<defaultValue>facebook-app-secret.txt</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+	<fileSets>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>*.xml</include>
+			</includes>
+			<excludes>
+				<!-- So maven doesn't think were overwriting the pom -->
+				<exclude>pom.xml</exclude>
+			</excludes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>ant</directory>
+			<includes>
+				<include>**/*.xml</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/main/java</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="false" encoding="UTF-8">
+			<directory>src/main/resources</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/main/web</directory>
+			<excludes>
+				<exclude>**/*.ico</exclude>
+			</excludes>
+		</fileSet>
+		<fileSet filtered="false">
+			<directory>src/main/web</directory>
+			<includes>
+				<include>**/*.ico</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/test/java</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</archetype-descriptor>

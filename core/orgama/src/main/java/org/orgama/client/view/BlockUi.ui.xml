@@ -1,0 +1,51 @@
+<!--
+Uncomment this for XHTML entities
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+            
+    <ui:with field="cnst" type="org.orgama.client.i18n.OrgamaConstants"/>
+    
+    <ui:style src="res/css/BlockUi.css"/>
+    
+    <g:HTMLPanel ui:styleName="{style.blockUiContainer}">
+        <g:HTMLPanel ui:field="pnlBlockUiBackground" 
+                ui:styleName="{style.blockUiBackground}">
+        </g:HTMLPanel>
+        <g:HTMLPanel ui:field="pnlBlockUiContentContainer" ui:visible="false"
+                ui:styleName="{style.blockUiContentContainer}">
+            <div class="{style.blockUiPaddingTopRow}">
+                <div class="{style.blockUiPaddingTopLeft}"></div>
+                <div class="{style.blockUiPaddingTopMiddle}"></div>
+                <div class="{style.blockUiPaddingTopRight}"></div>
+            </div>
+            <div class="{style.blockUiPaddingMiddleRow}">
+                <div class="{style.blockUiPaddingMiddleLeft}"></div>
+                <div class="{style.blockUiContent}">
+                    <g:HTMLPanel ui:field="pnlBlockUiUserContent"
+                            ui:styleName="{style.blockUiUserContent}">
+                    </g:HTMLPanel>
+                    <g:HTMLPanel ui:visible="false" 
+                            ui:field="pnlBlockUiControls"
+                            ui:styleName="{style.blockUiControls}">
+                        <g:Button ui:visible="false" ui:field="btnOkay"
+                            ui:text="{cnst.okay}"/>
+                        <g:Button ui:visible="false" ui:field="btnCancel"
+                            ui:text="{cnst.cancel}"/>
+                        <g:Button ui:visible="false" ui:field="btnYes"
+                            ui:text="{cnst.yes}"/>
+                        <g:Button ui:visible="false" ui:field="btnNo"
+                            ui:text="{cnst.no}"/>
+                    </g:HTMLPanel>
+                </div>
+                <div class="{style.blockUiPaddingMiddleRight}"></div>
+            </div>
+            <div class="{style.blockUiPaddingBottomRow}">
+                <div class="{style.blockUiPaddingBottomLeft}"></div>
+                <div class="{style.blockUiPaddingBottomMiddle}"></div>
+                <div class="{style.blockUiPaddingBottomRight}"></div>
+            </div>
+        </g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

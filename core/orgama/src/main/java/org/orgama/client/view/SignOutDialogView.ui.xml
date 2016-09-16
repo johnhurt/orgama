@@ -1,0 +1,17 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    
+    <ui:style src="res/css/SignOutDialog.css"/>
+    
+    <ui:with type="org.orgama.client.i18n.OrgamaConstants" field="constants"/>
+
+    <g:HTMLPanel ui:styleName="{style.logOutDialogContainer}">
+        <g:Label text="{constants.areYouSureYouWantToLogOut}"/>
+        <g:HTMLPanel ui:field="pnlAdditionalCheck" 
+                ui:visible="false"
+                ui:styleName="{style.externalAuthCheck}">
+            <g:CheckBox ui:field="cbxExternalLogOut"/>
+        </g:HTMLPanel>
+    </g:HTMLPanel>
+</ui:UiBinder>

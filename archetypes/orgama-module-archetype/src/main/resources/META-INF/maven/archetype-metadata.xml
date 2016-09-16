@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="MacRoman"?>
+<archetype-descriptor name="orgama-module-archetype">
+	<requiredProperties>
+		<requiredProperty key="dollar">
+			<defaultValue>$</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+    <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/test/java</directory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>

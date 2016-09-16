@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit trunk//EN"
+        "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
+<module>
+
+	<!-- Inherit the core Web Toolkit stuff. -->
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.resources.Resources"/>
+
+	<!-- GWT platform -->
+	<inherits name="com.gwtplatform.mvp.Mvp" />
+
+	<!-- Gin -->
+	<inherits name="com.google.gwt.inject.Inject" />
+
+	<!-- GWT dispatch -->
+	<inherits name="com.gwtplatform.dispatch.Dispatch" />
+
+	<!-- UI Binder -->
+	<inherits name="com.google.gwt.uibinder.UiBinder" />
+    
+	<!-- Internationalization -->
+	<inherits name="com.google.gwt.i18n.I18N"/>
+
+	<!-- Objectify App Engine -->
+	<inherits name="com.googlecode.objectify.Objectify" />
+	
+	<!-- Orgama Common -->
+	<inherits name="org.orgama.OrgamaCommon"/>
+	
+	<!-- Event Binder -->
+	<inherits name='com.google.web.bindery.event.EventBinder'/>
+	
+	<!-- Logging -->
+	<define-property name="log_level" 
+		values="OFF,TRACE,DEBUG,INFO,WARN,ERROR,FATAL"/>
+	<inherits name="com.allen_sauer.gwt.log.gwt-log-impl" />
+	<set-property name="log_level" value="TRACE"/>
+	<set-configuration-property name="log_pattern" 
+		value="%d [%-5p] %m%n" />
+	
+	
+	<!-- Client side code -->
+	<source path="client" />
+	<source path="shared" />
+	<source path="structure/client"/>
+	
+	<!-- Property bindings -->
+	
+	<define-configuration-property
+		name="gin.ginjector"
+		is-multi-valued="false" />
+
+	<set-configuration-property name="UiBinder.useSafeHtmlTemplates" 
+		value="true" />
+			
+</module>

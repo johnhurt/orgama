@@ -1,0 +1,32 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:o="urn:import:org.orgama.client.widget">
+           
+	<ui:style src="res/css/AuthInfoWidgetView.css"/>
+	
+    <g:HTMLPanel styleName="{style.widget}">
+		<g:Label ui:field="lblStatus" addStyleNames="{style.messageBox}"/>
+		<g:FormPanel styleName="{style.authForm}" 
+				ui:field="frmEmailAddress"
+				ui:action="/r/dummy"
+				ui:method="post">
+			<g:HTMLPanel>
+				<o:WatermarkedTextBox ui:field="txtEmailAddress" 
+						ui:name="emailAddress"
+						watermark="Email Address"
+						styleName="{style.emailBox}"/>
+				<div class="{style.buttonArea}">
+					<g:Button addStyleNames="{style.authButton}" 
+							ui:field="btnSignInOrRegistrer"/>
+					<g:Button addStyleNames="{style.authButton}" 
+							ui:field="btnSignOut"/>
+					<g:Image ui:field="imgNextToButton"
+							ui:url="favicon.ico"
+							addStyleNames="{style.imageContainer}"/>
+				</div>
+			</g:HTMLPanel>
+		</g:FormPanel>
+		
+    </g:HTMLPanel>
+</ui:UiBinder>

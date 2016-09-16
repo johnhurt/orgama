@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.orgama</groupId>
+	<artifactId>orgama-common</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Orgama Common</name>
+
+	<parent>
+		<groupId>org.orgama</groupId>
+		<artifactId>core-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<url>http://orgama.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-dev</artifactId>
+			<version>${gwt-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwt-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>${gae-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-java-sdk</artifactId>
+			<version>${gae-version}</version>
+			<scope>runtime</scope>
+			<type>zip</type>
+		</dependency>
+
+		<!-- MVP component -->
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-mvp-client</artifactId>
+			<version>${gwt-platform-version}</version>
+		</dependency>
+
+		<!-- Dispatch components -->
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-client</artifactId>
+			<version>${gwt-platform-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-server</artifactId>
+			<version>${gwt-platform-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-server-guice</artifactId>
+			<version>${gwt-platform-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gwtplatform</groupId>
+			<artifactId>gwtp-dispatch-shared</artifactId>
+			<version>${gwt-platform-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+			<classifier>sources</classifier>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.objectify</groupId>
+			<artifactId>objectify</artifactId>
+			<version>4.0rc2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-assistedinject</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-servlet</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-guice</artifactId>
+			<version>1.7-ea01</version>
+		</dependency>
+
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.allen-sauer.gwt.log</groupId>
+			<artifactId>gwt-log</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>14.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gdata</groupId>
+			<artifactId>core</artifactId>
+			<version>1.47.1</version>
+		</dependency>
+	 <dependency>
+	  <groupId>com.google.gwt.eventbinder</groupId>
+	  <artifactId>eventbinder</artifactId>
+	  <version>1.0.0</version>
+	 </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!--
+			 - This step handles copying of source files into the output so
+			 - they will be included in the jar and available for gwt
+			 - serialization
+			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<id>copy source to classes folder</id>
+						<phase>test</phase>
+						<configuration>
+							<target>
+								<echo message="Copying source to be jarred" />
+								<copy todir="target/classes" overwrite="true">
+									<fileset dir="src/main/java">
+										<exclude name="**/server/**/*" />
+									</fileset>
+								</copy>
+							</target>
+						</configuration>
+					</execution>
+					<execution>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<id>gwt-compile</id>
+						<phase>install</phase>
+						<configuration>
+							<tasks>
+								<echo message="Installation phase" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

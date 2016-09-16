@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+	<groupId>org.orgama</groupId>
+	<modelVersion>4.0.0</modelVersion>
+    <artifactId>orgama-module-archetype</artifactId>
+	<version>1.0-SNAPSHOT</version>
+    <packaging>maven-archetype</packaging>
+    <name>Orgama Module Archetype</name>
+	
+	<parent>
+		<groupId>org.orgama</groupId>
+		<artifactId>archetype-parent</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	
+    <description>
+        archetype for creating class libraries that can be used as gwt modules
+        that already have orgama dependencies built in
+    </description>
+	
+    <build>
+		
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>archetype-resources/pom.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>archetype-resources/pom.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	
+		
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.archetype</groupId>
+				<artifactId>archetype-packaging</artifactId>
+				<version>2.2</version>
+			</extension>
+		</extensions>
+		<plugins>
+			<plugin>
+				<artifactId>maven-archetype-plugin</artifactId>
+				<version>2.1</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<escapeString>\</escapeString>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>ico</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+    </build>
+</project>
